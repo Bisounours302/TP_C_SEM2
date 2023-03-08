@@ -1,11 +1,12 @@
 #include "livre.h"
+#include <time.h>
 
 void saisirLivre(T_livre * ptrL)
 {
 lireChaine("TITRE :", (ptrL->titre), MAX_TITRE );
 lireChaine("AUTEUR :", (ptrL->auteur ), MAX);
 lireChaine("EDITEUR :", (ptrL->editeur ), MAX);
-printf("ANNEE :");
+printf("ANNEE : ");
 scanf("%d", &ptrL->annee);
 }
 
@@ -17,12 +18,13 @@ afficherChaine("AUTEUR :", (ptrL->auteur ));
 printf(" - ");
 afficherChaine("EDITEUR :", (ptrL->editeur));
 printf(" - ");
-printf("ANNEE :%d - ", (ptrL->annee));
-printf("CODE :%d\n", (ptrL->code));
+printf("ANNEE : %d - ", (ptrL->annee));
+printf("CODE : %d\n", (ptrL->code));
 }
 
 void creationCode(T_livre *ptrL, int *liste_code)
 {
+    srand(time(0));
     int code= (rand() % 500) + 1;
     while (code_existant(code, liste_code))
     {
