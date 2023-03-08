@@ -47,6 +47,7 @@ int main()
 {
 lectureFichierTXT();
 int reponse,chx;
+int liste_code[MAX_CODE + 1] = {0};
 T_Bibliotheque B; 
 init( &B );
 T_Titre t;
@@ -61,7 +62,7 @@ do
 chx= menu();
 switch(chx)
 	{
-	case  1 : reponse = ajouterLivre(   &B  );
+	case  1 : reponse = ajouterLivre(   &B  , liste_code);
 				if (reponse==1)
 					printf(" ajout reussi !!");
 					else

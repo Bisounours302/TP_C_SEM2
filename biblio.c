@@ -8,16 +8,16 @@ ptrB->nbLivres=0;
 // ou (*ptrB).nbLivres=0;
 }
 
-int ajouterLivre(T_Bibliotheque  *ptrB)
+int ajouterLivre(T_Bibliotheque  *ptrB, int *liste_code)
 {
-if (ptrB->nbLivres<CAPACITE_BIBLIO)// reste t il de la place?
+	if (ptrB->nbLivres<CAPACITE_BIBLIO)// reste t il de la place?
 	{
 	saisirLivre(&(ptrB->etagere[ptrB->nbLivres]));
+	creationCode(&(ptrB->etagere[ptrB->nbLivres]), liste_code);
 	ptrB->nbLivres++;
 	return 1;
 	}
 return 0;
-	
 }
 
 

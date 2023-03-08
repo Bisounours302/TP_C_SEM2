@@ -20,9 +20,14 @@ typedef struct
 
 //prototypes
 void init (T_Bibliotheque *ptrB);
-int ajouterLivre(T_Bibliotheque  *ptrB);
+/// @brief 
+/// @param ptrB 
+/// @param liste 
+/// @return 
+int ajouterLivre(T_Bibliotheque  *ptrB, int *liste_code);
 int  afficherBibliotheque(const T_Bibliotheque  *ptrB);
 int AfficherLivresTitre(const T_Bibliotheque *ptrB, T_Titre t);
 int SupprimerLivre(T_Bibliotheque *ptrB, T_Titre t);
 int AfficherLivresAuteur(const T_Bibliotheque *ptrB, T_Aut aut);
+
 #endif
