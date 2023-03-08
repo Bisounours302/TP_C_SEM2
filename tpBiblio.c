@@ -1,6 +1,11 @@
 // TP GESTION D'UNE BIBLIOTHEQUE 
 #include "biblio.h"
 
+
+void lectureFichierTXT();
+void sauvegarde(T_Bibliotheque *ptrB);
+void chargement(T_Bibliotheque *ptrB);
+
 int menu()
 {
 	int choix;
@@ -172,13 +177,13 @@ if (fic!=NULL)
 	{
 	do
 		{
-		//fgets(chaine,M,fic);   //fputs pour �crire dans un fichier txt
-		//fscanf(fic,"%s",chaine); //fprintf pour �crire dans un fichier txt
-	//	fscanf(fic,"%s %s",chaine,chaine2);
+		fgets(chaine,M,fic);   //fputs pour �crire dans un fichier txt
+		fscanf(fic,"%s",chaine); //fprintf pour �crire dans un fichier txt
+		fscanf(fic,"%s %s",chaine,chaine2);
 		fscanf(fic,"%c",&c);
-		//fscanf(fic,"%c",&chaine[0]);
-	//	if (!feof(fic))
-           //printf("\n\t >%s--%s<",chaine,chaine2);
+		fscanf(fic,"%c",&chaine[0]);
+		if (!feof(fic))
+           printf("\n\t >%s--%s<",chaine,chaine2);
         printf(">%c<",c);
 		}
     while(!feof(fic));
